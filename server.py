@@ -236,7 +236,7 @@ class CORSRequestHandler (SimpleHTTPRequestHandler):
            kws.set_mode(kws.MODE_FULL, tokens)
 
 if __name__ == '__main__':
-    test(CORSRequestHandler, HTTPServer, port=int(sys.argv[1]) if len(sys.argv) > 1 else 80)
+    test(CORSRequestHandler, HTTPServer, port=int(sys.argv[1]) if len(sys.argv) > 1 else 9000)
    
 # *******SERVER******
 # port = int(os.getenv('PORT', 80))
