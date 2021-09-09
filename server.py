@@ -88,13 +88,11 @@ def send_email(trigger_type, instrument_name):
   message = service.users().messages().send(userId='me', body={'raw': raw_string}).execute()
 
 def check_alerts(ticks): 
-  # print(ticks)
+
   for tick in ticks:
     
     for item in alerts: 
-      print(tick['instrument_token'],item['instrument_token'])
       if tick['instrument_token'] == item['instrument_token']:
-        print('hello')
         #check alerts
         print(tick['volume'],item['volume_alert']['value'], not item['volume_alert']['triggered'])
         if tick['volume'] >= item['volume_alert']['value'] and (not item['volume_alert']['triggered']):
@@ -126,16 +124,16 @@ def check_alerts(ticks):
 
             print(order)
 
-            # url = f'https://api.kite.trade/orders/regular'
-            # resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
-            # parsed_response = json.loads(resp.content.decode("UTF-8"))
-            # print(parsed_response)
+            url = f'https://api.kite.trade/orders/regular'
+            resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
+            parsed_response = json.loads(resp.content.decode("UTF-8"))
+            print(parsed_response)
 
 
 
           print(alerts)
-        #   expo_notification('Qty Alert',item['instrument_name'])
-        #   send_email('Qty Alert',item['instrument_name'])
+          expo_notification('Qty Alert',item['instrument_name'])
+          send_email('Qty Alert',item['instrument_name'])
           print(f'send quantity alert') 
 
 
@@ -144,7 +142,6 @@ def on_ticks(ws, ticks):
     # print(ticks)
    
     if len(ticks) > 0:
-        # print("Current mode: {}".format(ticks[0]["mode"]))
         t = threading.Thread(name='t',target=check_alerts,args=(ticks,))
         t.start()
         
@@ -238,12 +235,7 @@ class CORSRequestHandler (SimpleHTTPRequestHandler):
 if __name__ == '__main__':
     test(CORSRequestHandler, HTTPServer, port=int(sys.argv[1]) if len(sys.argv) > 1 else 9000)
    
-# *******SERVER******
-# port = int(os.getenv('PORT', 80))
-# print('Listening on port %s' % (port))
-# httpd = socketserver.TCPServer(('', port), Handler)
-# httpd.serve_forever()
-# *******SERVER******
+
 
 
 
