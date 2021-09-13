@@ -58,7 +58,7 @@ alerts = [
             "value": 10000,
             "triggered": 0
         },
-        "type": "BUY",
+        "type": "LOWER",
         "quantity_alert": {
             "value": 5000,
             "triggered": 0
@@ -75,7 +75,7 @@ alerts = [
             "value": 50000,
             "triggered": 0
         },
-        "type": "BUY",
+        "type": "LOWER",
         "quantity_alert": {
             "value": 50000,
             "triggered": 0
@@ -92,7 +92,7 @@ alerts = [
             "value": 10000,
             "triggered": 0
         },
-        "type": "BUY",
+        "type": "LOWER",
         "quantity_alert": {
             "value": 8000,
             "triggered": 0
@@ -109,7 +109,7 @@ alerts = [
             "value": 3000,
             "triggered": 0
         },
-        "type": "BUY",
+        "type": "LOWER",
         "quantity_alert": {
             "value": 5000,
             "triggered": 0
@@ -145,53 +145,66 @@ def send_email(trigger_type, instrument_name):
   message = service.users().messages().send(userId='me', body={'raw': raw_string}).execute()
 
 def check_alerts(ticks): 
+    # print(ticks)
 
-  for tick in ticks:
+    for tick in ticks:
+
     
-    for item in alerts: 
-      if tick['instrument_token'] == item['instrument_token']:
-        #check alerts
-        print(tick['volume'],item['volume_alert']['value'], not item['volume_alert']['triggered'])
-        if tick['volume'] >= item['volume_alert']['value'] and (not item['volume_alert']['triggered']):
-          item['volume_alert']['triggered'] = True
+        for item in alerts: 
         
-          expo_notification('Volume',item['instrument_name'])
-          send_email('Volume',item['instrument_name'])
-        
-
-      
-        if tick['depth'][item['type'].lower()][0]['quantity'] <= item['quantity_alert']['value'] and ( not item['quantity_alert']['triggered']):
-          item['quantity_alert']['triggered'] = True
-
-          if item['place_order']:
-          
-            # place automated order at market price
-
-            order = {
-                'tradingsymbol':item['instrument_name'],
-                'exchange':item['exchange'],
-                'transaction_type':item['type'],
-                'order_type':'LIMIT',
-                'quantity':item['quantity'],
-                'product':'CNC',
-                'validity':'DAY',
-                'price':item['price']
+            if tick['instrument_token'] == item['instrument_token']:
+                #check alerts
+               
+                if tick['volume'] >= item['volume_alert']['value'] and (not item['volume_alert']['triggered']):
+                    item['volume_alert']['triggered'] = True
+                    
+                      expo_notification('Volume',item['instrument_name'])
+                      send_email('Volume',item['instrument_name'])
                 
-            }
 
-            print(order)
+               
+                qty = 0
+                order_type = 'SELL'
 
-            url = f'https://api.kite.trade/orders/regular'
-            resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
-            parsed_response = json.loads(resp.content.decode("UTF-8"))
-            print(parsed_response)
+                if item['type'] == 'LOWER':
+                    qty = tick['depth']['sell'][0]['quantity']
+                    order_type = 'BUY'
+                else:
+                    qty = tick['depth']['buy'][0]['quantity']  
+                    order_type = 'SELL' 
+
+                if qty <= item['quantity_alert']['value'] and ( not item['quantity_alert']['triggered']):
+                  item['quantity_alert']['triggered'] = True
+
+                  if item['place_order']:
+                
+                    
+
+                    order = {
+                        'tradingsymbol':item['instrument_name'],
+                        'exchange':item['exchange'],
+                        'transaction_type':item['type'],
+                        'order_type':'LIMIT',
+                        'quantity':item['quantity'],
+                        'product':'CNC',
+                        'validity':'DAY',
+                        'price':item['price']
+                        
+                    }
+
+                    print(order)
+
+                    # url = f'https://api.kite.trade/orders/regular'
+                    # resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
+                    # parsed_response = json.loads(resp.content.decode("UTF-8"))
+                    # print(parsed_response)
 
 
 
-          print(alerts)
-          expo_notification('Qty Alert',item['instrument_name'])
-          send_email('Qty Alert',item['instrument_name'])
-          print(f'send quantity alert') 
+                  print(alerts)
+                  expo_notification('Qty Alert',item['instrument_name'])
+                  send_email('Qty Alert',item['instrument_name'])
+                  print(f'send quantity alert') 
 
 
 # Callback for tick reception.
