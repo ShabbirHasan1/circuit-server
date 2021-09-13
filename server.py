@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 
 # Initialise.
-kws = KiteTicker("26ud7j6qh471oabu", "u2S3iE11UNfCLGEi02BGgXYcP4lrwKhB")
+kws = KiteTicker("26ud7j6qh471oabu", "ZKLgJkDLLsTIkn52I3UMENaZWxLn8zl2")
 
 # ********GMAIL API CONFIGURATION*************
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -43,26 +43,99 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [138267652]
+tokens = [ 136509188,5017345, 134760196, 131435012, 135723780, 132382468]
 
-alerts = [{
-      'instrument_token': 138267652,
-      'instrument_name': 'TIAANC',
-      'volume_alert': {
-        'value': 5000,
-        'triggered': 0
-      },
-      'type': 'SELL',
+# authorization_string 
+authorization_string = 'token 26ud7j6qh471oabu:ZKLgJkDLLsTIkn52I3UMENaZWxLn8zl2'
 
-      'quantity_alert': {
-        'value': 1000,
-        'triggered': 0
-      },
-      'exchange': 'BSE',
-      'quantity':0,
-      'place_order': 0,
-      'price': 0
-    }]
+
+alerts = [
+    {
+        "instrument_token": 136509188,
+        "instrument_name": "PRAKASHSTL",
+        "volume_alert": {
+            "value": 200000,
+            "triggered": 0
+        },
+        "type": "BUY",
+        "quantity_alert": {
+            "value": 200000,
+            "triggered": 0
+        },
+        "exchange": "BSE",
+        "quantity": 80000,
+        "place_order": 1,
+        "price": 2.12
+    },
+    {
+        "instrument_token": 134760196,
+        "instrument_name": "RPIL",
+        "volume_alert": {
+            "value": 10000,
+            "triggered": 0
+        },
+        "type": "BUY",
+        "quantity_alert": {
+            "value": 5000,
+            "triggered": 0
+        },
+        "exchange": "BSE",
+        "quantity": 800,
+        "place_order": 1,
+        "price": 201.95
+    },
+    {
+        "instrument_token": 131435012,
+        "instrument_name": "SMFIL",
+        "volume_alert": {
+            "value": 50000,
+            "triggered": 0
+        },
+        "type": "BUY",
+        "quantity_alert": {
+            "value": 50000,
+            "triggered": 0
+        },
+        "exchange": "BSE",
+        "quantity": 20000,
+        "place_order": 1,
+        "price": 3.38
+    },
+    {
+        "instrument_token": 135723780,
+        "instrument_name": "DAULAT",
+        "volume_alert": {
+            "value": 10000,
+            "triggered": 0
+        },
+        "type": "BUY",
+        "quantity_alert": {
+            "value": 8000,
+            "triggered": 0
+        },
+        "exchange": "BSE",
+        "quantity": 4000,
+        "place_order": 0,
+        "price": 20.65
+    },
+    {
+        "instrument_token": "132382468",
+        "instrument_name": "PCS",
+        "volume_alert": {
+            "value": 3000,
+            "triggered": 0
+        },
+        "type": "BUY",
+        "quantity_alert": {
+            "value": 5000,
+            "triggered": 0
+        },
+        "exchange": "BSE",
+        "quantity": 2000,
+        "place_order": 1,
+        "price": 12.72
+    }
+]
 
 def expo_notification(trigger_type, instrument_name):
   url = "https://exp.host/--/api/v2/push/send"
