@@ -50,23 +50,7 @@ authorization_string = 'token 26ud7j6qh471oabu:ZKLgJkDLLsTIkn52I3UMENaZWxLn8zl2'
 
 
 alerts = [
-    {
-        "instrument_token": 136509188,
-        "instrument_name": "PRAKASHSTL",
-        "volume_alert": {
-            "value": 200000,
-            "triggered": 0
-        },
-        "type": "BUY",
-        "quantity_alert": {
-            "value": 150000,
-            "triggered": 0
-        },
-        "exchange": "BSE",
-        "quantity": 80000,
-        "place_order": 1,
-        "price": 2.
-    },
+    
     {
         "instrument_token": 134760196,
         "instrument_name": "RPIL",
