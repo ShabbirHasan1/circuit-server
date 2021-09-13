@@ -158,8 +158,8 @@ def check_alerts(ticks):
                 if tick['volume'] >= item['volume_alert']['value'] and (not item['volume_alert']['triggered']):
                     item['volume_alert']['triggered'] = True
                     
-                      expo_notification('Volume',item['instrument_name'])
-                      send_email('Volume',item['instrument_name'])
+                    expo_notification('Volume',item['instrument_name'])
+                    send_email('Volume',item['instrument_name'])
                 
 
                
