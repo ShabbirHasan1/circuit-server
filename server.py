@@ -59,13 +59,13 @@ alerts = [
         },
         "type": "BUY",
         "quantity_alert": {
-            "value": 200000,
+            "value": 150000,
             "triggered": 0
         },
         "exchange": "BSE",
         "quantity": 80000,
         "place_order": 1,
-        "price": 2.02
+        "price": 2.
     },
     {
         "instrument_token": 134760196,
