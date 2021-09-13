@@ -65,7 +65,7 @@ alerts = [
         "exchange": "BSE",
         "quantity": 80000,
         "place_order": 1,
-        "price": 2.12
+        "price": 2.02
     },
     {
         "instrument_token": 134760196,
@@ -119,7 +119,7 @@ alerts = [
         "price": 20.65
     },
     {
-        "instrument_token": "132382468",
+        "instrument_token": 132382468,
         "instrument_name": "PCS",
         "volume_alert": {
             "value": 3000,
