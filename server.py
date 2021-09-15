@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 
 # Initialise.
-kws = KiteTicker("26ud7j6qh471oabu", "ZKLgJkDLLsTIkn52I3UMENaZWxLn8zl2")
+kws = KiteTicker("26ud7j6qh471oabu", "CNvtuRzX5fqEOoxDgseSi5jnObM6P0Nr")
 
 # ********GMAIL API CONFIGURATION*************
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -43,81 +43,29 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [ 136509188,5017345, 134760196, 131435012, 135723780, 132382468]
+tokens = [ 138230532]
 
 # authorization_string 
-authorization_string = 'token 26ud7j6qh471oabu:ZKLgJkDLLsTIkn52I3UMENaZWxLn8zl2'
+authorization_string = 'token 26ud7j6qh471oabu:CNvtuRzX5fqEOoxDgseSi5jnObM6P0Nr'
 
 
 alerts = [
-    
     {
-        "instrument_token": 134760196,
-        "instrument_name": "RPIL",
+        "instrument_token": 138230532,
+        "instrument_name": "ZEAL",
         "volume_alert": {
-            "value": 10000,
+            "value": 20000,
             "triggered": 0
         },
         "type": "LOWER",
         "quantity_alert": {
-            "value": 5000,
+            "value": 6000,
             "triggered": 0
         },
         "exchange": "BSE",
-        "quantity": 800,
-        "place_order": 1,
-        "price": 201.95
-    },
-    {
-        "instrument_token": 131435012,
-        "instrument_name": "SMFIL",
-        "volume_alert": {
-            "value": 50000,
-            "triggered": 0
-        },
-        "type": "LOWER",
-        "quantity_alert": {
-            "value": 50000,
-            "triggered": 0
-        },
-        "exchange": "BSE",
-        "quantity": 20000,
-        "place_order": 1,
-        "price": 3.38
-    },
-    {
-        "instrument_token": 135723780,
-        "instrument_name": "DAULAT",
-        "volume_alert": {
-            "value": 10000,
-            "triggered": 0
-        },
-        "type": "LOWER",
-        "quantity_alert": {
-            "value": 8000,
-            "triggered": 0
-        },
-        "exchange": "BSE",
-        "quantity": 4000,
+        "quantity": 1,
         "place_order": 0,
-        "price": 20.65
-    },
-    {
-        "instrument_token": 132382468,
-        "instrument_name": "PCS",
-        "volume_alert": {
-            "value": 3000,
-            "triggered": 0
-        },
-        "type": "LOWER",
-        "quantity_alert": {
-            "value": 5000,
-            "triggered": 0
-        },
-        "exchange": "BSE",
-        "quantity": 2000,
-        "place_order": 1,
-        "price": 12.72
+        "price": 86.65
     }
 ]
 
