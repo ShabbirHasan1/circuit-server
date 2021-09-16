@@ -63,7 +63,7 @@ alerts = [
             "triggered": 0
         },
         "exchange": "BSE",
-        "quantity": 500,
+        "quantity": 1000,
         "place_order": 1,
         "price": 82.35
     }
