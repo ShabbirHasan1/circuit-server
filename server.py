@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 
 # Initialise.
-kws = KiteTicker("26ud7j6qh471oabu", "CNvtuRzX5fqEOoxDgseSi5jnObM6P0Nr")
+kws = KiteTicker("26ud7j6qh471oabu", "eN500OS0P4idFglf8TmO8cEsjY2saDJl")
 
 # ********GMAIL API CONFIGURATION*************
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -46,7 +46,7 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 tokens = [ 138230532]
 
 # authorization_string 
-authorization_string = 'token 26ud7j6qh471oabu:CNvtuRzX5fqEOoxDgseSi5jnObM6P0Nr'
+authorization_string = 'token 26ud7j6qh471oabu:eN500OS0P4idFglf8TmO8cEsjY2saDJl'
 
 
 alerts = [
@@ -54,18 +54,18 @@ alerts = [
         "instrument_token": 138230532,
         "instrument_name": "ZEAL",
         "volume_alert": {
-            "value": 20000,
+            "value": 10000,
             "triggered": 0
         },
         "type": "LOWER",
         "quantity_alert": {
-            "value": 6000,
+            "value": 2000,
             "triggered": 0
         },
         "exchange": "BSE",
-        "quantity": 1,
-        "place_order": 0,
-        "price": 86.65
+        "quantity": 500,
+        "place_order": 1,
+        "price": 82.35
     }
 ]
 
@@ -142,10 +142,10 @@ def check_alerts(ticks):
 
                     print(order)
 
-                    # url = f'https://api.kite.trade/orders/regular'
-                    # resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
-                    # parsed_response = json.loads(resp.content.decode("UTF-8"))
-                    # print(parsed_response)
+                    url = f'https://api.kite.trade/orders/regular'
+                    resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
+                    parsed_response = json.loads(resp.content.decode("UTF-8"))
+                    print(parsed_response)
 
 
 
