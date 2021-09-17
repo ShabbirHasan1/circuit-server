@@ -59,7 +59,7 @@ alerts = [
         },
         "type": "UPPER",
         "quantity_alert": {
-            "value": 1200,
+            "value": 1800,
             "triggered": 0
         },
         "exchange": "BSE",
