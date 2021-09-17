@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 
 # Initialise.
-kws = KiteTicker("26ud7j6qh471oabu", "eN500OS0P4idFglf8TmO8cEsjY2saDJl")
+kws = KiteTicker("26ud7j6qh471oabu", "WPKOuy3Qg0jPAQt7yvtflLgzigz1gkoi")
 
 # ********GMAIL API CONFIGURATION*************
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -43,29 +43,29 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [ 138230532]
+tokens = [  139078148]
 
 # authorization_string 
-authorization_string = 'token 26ud7j6qh471oabu:eN500OS0P4idFglf8TmO8cEsjY2saDJl'
+authorization_string = 'token 26ud7j6qh471oabu:WPKOuy3Qg0jPAQt7yvtflLgzigz1gkoi'
 
 
 alerts = [
     {
-        "instrument_token": 138230532,
-        "instrument_name": "ZEAL",
+        "instrument_token": 139078148,
+        "instrument_name": "RTL",
         "volume_alert": {
-            "value": 10000,
+            "value": 5500,
             "triggered": 0
         },
-        "type": "LOWER",
+        "type": "UPPER",
         "quantity_alert": {
-            "value": 2000,
+            "value": 1200,
             "triggered": 0
         },
         "exchange": "BSE",
-        "quantity": 1000,
+        "quantity": 600,
         "place_order": 1,
-        "price": 82.35
+        "price": 975
     }
 ]
 
@@ -79,14 +79,14 @@ def expo_notification(trigger_type, instrument_name):
               ]
   headers = {'content-type': 'application/json'}
   requests.post(url,data=json.dumps(body_tejas),headers=headers)
-#   requests.post(url,data=json.dumps(body_saksham),headers=headers)
+  requests.post(url,data=json.dumps(body_saksham),headers=headers)
 
 def send_email(trigger_type, instrument_name):
   emailMsg = f'{instrument_name} {trigger_type} Triggered'
 
   mimeMessage = MIMEMultipart()
-  # mimeMessage['to'] = 'f20190562@pilani.bits-pilani.ac.in, agarwalsaksham32@gmail.com'
-  mimeMessage['to'] = 'f20190562@pilani.bits-pilani.ac.in'
+  mimeMessage['to'] = 'f20190562@pilani.bits-pilani.ac.in, agarwalsaksham32@gmail.com'
+#   mimeMessage['to'] = 'f20190562@pilani.bits-pilani.ac.in'
   mimeMessage['subject'] = f'{instrument_name} {trigger_type} Triggered'
   mimeMessage.attach(MIMEText(emailMsg, 'plain'))
   raw_string = base64.urlsafe_b64encode(mimeMessage.as_bytes()).decode()
@@ -131,7 +131,7 @@ def check_alerts(ticks):
                     order = {
                         'tradingsymbol':item['instrument_name'],
                         'exchange':item['exchange'],
-                        'transaction_type':item['type'],
+                        'transaction_type':order_type,
                         'order_type':'LIMIT',
                         'quantity':item['quantity'],
                         'product':'CNC',
