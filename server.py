@@ -43,7 +43,7 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [ 3433473]
+tokens = [ 3433473,3956993]
 
 # authorization_string 
 authorization_string = 'token 26ud7j6qh471oabu:8k6cyCsA5viyIouKwLVnXH8YiI7gD1I9'
@@ -66,6 +66,23 @@ alerts = [
         "quantity": 1,
         "place_order": 0,
         "price": 1288.20
+    },
+     {
+        "instrument_token": 3956993,
+        "instrument_name": "HECPROJECT-SM",
+        "volume_alert": {
+            "value": 7000,
+            "triggered": 0
+        },
+        "type": "UPPER",
+        "quantity_alert": {
+            "value": 3600,
+            "triggered": 0
+        },
+        "exchange": "NSE",
+        "quantity": 1200,
+        "place_order": 1,
+        "price": 141.35
     }
 ]
 
@@ -142,10 +159,10 @@ def check_alerts(ticks):
 
                     print(order)
 
-                    # url = f'https://api.kite.trade/orders/regular'
-                    # resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
-                    # parsed_response = json.loads(resp.content.decode("UTF-8"))
-                    # print(parsed_response)
+                    url = f'https://api.kite.trade/orders/regular'
+                    resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
+                    parsed_response = json.loads(resp.content.decode("UTF-8"))
+                    print(parsed_response)
 
 
 
