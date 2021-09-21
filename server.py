@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 
 # Initialise.
-kws = KiteTicker("26ud7j6qh471oabu", "WPKOuy3Qg0jPAQt7yvtflLgzigz1gkoi")
+kws = KiteTicker("26ud7j6qh471oabu", "8k6cyCsA5viyIouKwLVnXH8YiI7gD1I9")
 
 # ********GMAIL API CONFIGURATION*************
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -43,29 +43,29 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [  139078148]
+tokens = [ 136379908]
 
 # authorization_string 
-authorization_string = 'token 26ud7j6qh471oabu:WPKOuy3Qg0jPAQt7yvtflLgzigz1gkoi'
+authorization_string = 'token 26ud7j6qh471oabu:8k6cyCsA5viyIouKwLVnXH8YiI7gD1I9'
 
 
 alerts = [
     {
-        "instrument_token": 139078148,
-        "instrument_name": "RTL",
+        "instrument_token": 136379908,
+        "instrument_name": "GPIL",
         "volume_alert": {
-            "value": 5500,
+            "value": 30000,
             "triggered": 0
         },
         "type": "UPPER",
         "quantity_alert": {
-            "value": 1800,
+            "value": 10000,
             "triggered": 0
         },
         "exchange": "BSE",
-        "quantity": 600,
-        "place_order": 1,
-        "price": 975
+        "quantity": 1,
+        "place_order": 0,
+        "price": 1288.20
     }
 ]
 
@@ -142,10 +142,10 @@ def check_alerts(ticks):
 
                     print(order)
 
-                    url = f'https://api.kite.trade/orders/regular'
-                    resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
-                    parsed_response = json.loads(resp.content.decode("UTF-8"))
-                    print(parsed_response)
+                    # url = f'https://api.kite.trade/orders/regular'
+                    # resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
+                    # parsed_response = json.loads(resp.content.decode("UTF-8"))
+                    # print(parsed_response)
 
 
 
