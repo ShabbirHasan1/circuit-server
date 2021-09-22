@@ -54,7 +54,7 @@ alerts = [
         "instrument_token": 3433473,
         "instrument_name": "GPIL-BE",
         "volume_alert": {
-            "value": 30000,
+            "value": 20000,
             "triggered": 0
         },
         "type": "LOWER",
