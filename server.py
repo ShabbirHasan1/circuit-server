@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 
 # Initialise.
-kws = KiteTicker("26ud7j6qh471oabu", "S1kV0aEaK1uAVrg42gbSalr0Q27Npixc")
+kws = KiteTicker("26ud7j6qh471oabu", "dtZK0NthgDNOvrmXfy2gFuKg6Gm6Rjf0")
 
 # ********GMAIL API CONFIGURATION*************
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -43,46 +43,29 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [ 3433473,3956993]
+tokens = [ 135822596]
 
 # authorization_string 
-authorization_string = 'token 26ud7j6qh471oabu:S1kV0aEaK1uAVrg42gbSalr0Q27Npixc'
+authorization_string = 'token 26ud7j6qh471oabu:dtZK0NthgDNOvrmXfy2gFuKg6Gm6Rjf0'
 
 
 alerts = [
-    {
-        "instrument_token": 3433473,
-        "instrument_name": "GPIL-BE",
+     {
+        "instrument_token": 135822596,
+        "instrument_name": "NCLRESE",
         "volume_alert": {
-            "value": 20000,
+            "value": 600000,
             "triggered": 0
         },
         "type": "LOWER",
         "quantity_alert": {
-            "value": 10000,
+            "value": 180000,
             "triggered": 0
         },
-        "exchange": "NSE",
-        "quantity": 1,
-        "place_order": 0,
-        "price": 1288.20
-    },
-     {
-        "instrument_token": 3956993,
-        "instrument_name": "HECPROJECT-SM",
-        "volume_alert": {
-            "value": 7000,
-            "triggered": 0
-        },
-        "type": "UPPER",
-        "quantity_alert": {
-            "value": 3600,
-            "triggered": 0
-        },
-        "exchange": "NSE",
-        "quantity": 1200,
+        "exchange": "BSE",
+        "quantity": 20000,
         "place_order": 1,
-        "price": 148.4
+        "price": 1.86
     }
 ]
 
