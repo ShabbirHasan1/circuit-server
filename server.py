@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 
 # Initialise.
-kws = KiteTicker("26ud7j6qh471oabu", "dtZK0NthgDNOvrmXfy2gFuKg6Gm6Rjf0")
+kws = KiteTicker("26ud7j6qh471oabu", "AxVkKfnRoa2XFJwpEjWmuos8f4Wkc7PX")
 
 # ********GMAIL API CONFIGURATION*************
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -43,29 +43,29 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [ 135822596]
+tokens = [ 138192388]
 
 # authorization_string 
-authorization_string = 'token 26ud7j6qh471oabu:dtZK0NthgDNOvrmXfy2gFuKg6Gm6Rjf0'
+authorization_string = 'token 26ud7j6qh471oabu:AxVkKfnRoa2XFJwpEjWmuos8f4Wkc7PX'
 
 
 alerts = [
      {
-        "instrument_token": 135822596,
-        "instrument_name": "NCLRESE",
+        "instrument_token": 138192388,
+        "instrument_name": "LELAVOIR",
         "volume_alert": {
             "value": 600000,
             "triggered": 0
         },
         "type": "LOWER",
         "quantity_alert": {
-            "value": 180000,
+            "value": 15000,
             "triggered": 0
         },
         "exchange": "BSE",
-        "quantity": 20000,
+        "quantity": 1000,
         "place_order": 1,
-        "price": 1.86
+        "price": 22.55
     }
 ]
 
