@@ -43,7 +43,7 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [ 138192388]
+tokens = [ 138192388, 128626692]
 
 # authorization_string 
 authorization_string = 'token 26ud7j6qh471oabu:AxVkKfnRoa2XFJwpEjWmuos8f4Wkc7PX'
@@ -66,6 +66,22 @@ alerts = [
         "quantity": 1000,
         "place_order": 1,
         "price": 22.55
+    }, {
+        "instrument_token": 128626692,
+        "instrument_name": "ROLLT",
+        "volume_alert": {
+            "value": 600000,
+            "triggered": 0
+        },
+        "type": "LOWER",
+        "quantity_alert": {
+            "value": 50000,
+            "triggered": 0
+        },
+        "exchange": "BSE",
+        "quantity": 20000,
+        "place_order": 1,
+        "price": 2.46
     }
 ]
 
