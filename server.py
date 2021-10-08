@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 
 # Initialise.
-kws = KiteTicker("26ud7j6qh471oabu", "AxVkKfnRoa2XFJwpEjWmuos8f4Wkc7PX")
+kws = KiteTicker("26ud7j6qh471oabu", "SMP9pWq2PEGuABRKXbrD0Megk87SUEH0")
 
 # ********GMAIL API CONFIGURATION*************
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -43,45 +43,29 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [ 138192388, 128626692]
+tokens = [ 135822596]
 
 # authorization_string 
-authorization_string = 'token 26ud7j6qh471oabu:AxVkKfnRoa2XFJwpEjWmuos8f4Wkc7PX'
+authorization_string = 'token 26ud7j6qh471oabu:SMP9pWq2PEGuABRKXbrD0Megk87SUEH0'
 
 
 alerts = [
      {
-        "instrument_token": 138192388,
-        "instrument_name": "LELAVOIR",
+        "instrument_token": 135822596,
+        "instrument_name": "NCLRESE",
         "volume_alert": {
-            "value": 600000,
+            "value": 200000,
             "triggered": 0
         },
-        "type": "LOWER",
+        "type": "UPPER",
         "quantity_alert": {
-            "value": 15000,
+            "value": 40000,
             "triggered": 0
         },
         "exchange": "BSE",
         "quantity": 1000,
         "place_order": 1,
-        "price": 22.55
-    }, {
-        "instrument_token": 128626692,
-        "instrument_name": "ROLLT",
-        "volume_alert": {
-            "value": 600000,
-            "triggered": 0
-        },
-        "type": "LOWER",
-        "quantity_alert": {
-            "value": 50000,
-            "triggered": 0
-        },
-        "exchange": "BSE",
-        "quantity": 20000,
-        "place_order": 1,
-        "price": 2.46
+        "price": 2.35
     }
 ]
 
