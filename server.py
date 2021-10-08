@@ -43,7 +43,7 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [ 135822596]
+tokens = [ 135822596, 138479876]
 
 # authorization_string 
 authorization_string = 'token 26ud7j6qh471oabu:SMP9pWq2PEGuABRKXbrD0Megk87SUEH0'
@@ -66,6 +66,23 @@ alerts = [
         "quantity": 1000,
         "place_order": 1,
         "price": 2.35
+    },
+    {
+        "instrument_token": 138479876,
+        "instrument_name": "MEDICO",
+        "volume_alert": {
+            "value": 6000,
+            "triggered": 0
+        },
+        "type": "UPPER",
+        "quantity_alert": {
+            "value": 2400,
+            "triggered": 0
+        },
+        "exchange": "BSE",
+        "quantity": 1200,
+        "place_order": 1,
+        "price": 344.25
     }
 ]
 
