@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 
 # Initialise.
-kws = KiteTicker("26ud7j6qh471oabu", "SMP9pWq2PEGuABRKXbrD0Megk87SUEH0")
+kws = KiteTicker("26ud7j6qh471oabu", "B2YJh6llkdEJqM4H81JFHhWhlFRaXyj0")
 
 # ********GMAIL API CONFIGURATION*************
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -43,35 +43,18 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [ 135822596, 138479876]
+tokens = [ 138479876, 128336388]
 
 # authorization_string 
-authorization_string = 'token 26ud7j6qh471oabu:SMP9pWq2PEGuABRKXbrD0Megk87SUEH0'
+authorization_string = 'token 26ud7j6qh471oabu:B2YJh6llkdEJqM4H81JFHhWhlFRaXyj0'
 
 
 alerts = [
      {
-        "instrument_token": 135822596,
-        "instrument_name": "NCLRESE",
-        "volume_alert": {
-            "value": 200000,
-            "triggered": 0
-        },
-        "type": "UPPER",
-        "quantity_alert": {
-            "value": 40000,
-            "triggered": 0
-        },
-        "exchange": "BSE",
-        "quantity": 1000,
-        "place_order": 1,
-        "price": 2.35
-    },
-    {
         "instrument_token": 138479876,
         "instrument_name": "MEDICO",
         "volume_alert": {
-            "value": 6000,
+            "value": 7000,
             "triggered": 0
         },
         "type": "UPPER",
@@ -82,7 +65,24 @@ alerts = [
         "exchange": "BSE",
         "quantity": 1200,
         "place_order": 1,
-        "price": 344.25
+        "price": 361.45
+    },
+     {
+        "instrument_token": 128336388,
+        "instrument_name": "PRISMX",
+        "volume_alert": {
+            "value": 81000,
+            "triggered": 0
+        },
+        "type": "UPPER",
+        "quantity_alert": {
+            "value": 2000,
+            "triggered": 0
+        },
+        "exchange": "BSE",
+        "quantity": 500,
+        "place_order": 1,
+        "price": 119.5
     }
 ]
 
