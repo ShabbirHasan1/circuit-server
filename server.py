@@ -52,7 +52,7 @@ authorization_string = 'token 26ud7j6qh471oabu:skfBE9D7SdX3oKA3aukGam650dgw5XPz'
 alerts = [
      {
         "instrument_token": 4451329,
-        "instrument_name": "ADANI",
+        "instrument_name": "ADANIPOWER",
         "volume_alert": {
             "value": 8500000,
             "triggered": 0
