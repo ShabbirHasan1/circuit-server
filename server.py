@@ -103,7 +103,7 @@ def check_alerts(ticks):
             if tick['instrument_token'] == item['instrument_token']:
                 #check alerts
                
-                if tick['volume'] >= item['volume_alert']['value'] and (not item['volume_alert']['triggered']):
+                if tick['volume'] >= int(item['volume_alert']['value']) and (not item['volume_alert']['triggered']):
                     item['volume_alert']['triggered'] = True
                     
                     expo_notification('Volume',item['instrument_name'])
@@ -121,7 +121,7 @@ def check_alerts(ticks):
                     qty = tick['depth']['buy'][0]['quantity']  
                     order_type = 'SELL' 
 
-                if qty <= item['quantity_alert']['value'] and ( not item['quantity_alert']['triggered']):
+                if qty <= int(item['quantity_alert']['value']) and ( not item['quantity_alert']['triggered']):
                   item['quantity_alert']['triggered'] = True
 
                   if item['place_order']:
