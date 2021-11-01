@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 
 # Initialise.
-kws = KiteTicker("26ud7j6qh471oabu", "4hZXUVegBK516VdsNU8aBFCNgUDPMaNY")
+kws = KiteTicker("26ud7j6qh471oabu", "UxbBLHKNYCjL9VzA4uH9G7pRh3jZjx7o")
 
 # ********GMAIL API CONFIGURATION*************
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -43,29 +43,29 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [ 4451329 ]
+tokens = [ 139078148 ]
 
 # authorization_string 
-authorization_string = 'token 26ud7j6qh471oabu:4hZXUVegBK516VdsNU8aBFCNgUDPMaNY'
+authorization_string = 'token 26ud7j6qh471oabu:UxbBLHKNYCjL9VzA4uH9G7pRh3jZjx7o'
 
 
 alerts = [
      {
-        "instrument_token": 4451329,
+        "instrument_token": 139078148,
         "instrument_name": "ADANIPOWER",
         "volume_alert": {
-            "value": 8500000,
+            "value": 2500,
             "triggered": 0
         },
-        "type": "UPPER",
+        "type": "LOWER",
         "quantity_alert": {
-            "value": 3000000,
+            "value": 4000,
             "triggered": 0
         },
         "exchange": "BSE",
         "quantity": 1,
         "place_order": 0,
-        "price": 379.5
+        "price": 416
     }
 ]
 
@@ -93,7 +93,7 @@ def send_email(trigger_type, instrument_name):
   message = service.users().messages().send(userId='me', body={'raw': raw_string}).execute()
 
 def check_alerts(ticks): 
-    # print(ticks)
+    print(ticks)
 
     for tick in ticks:
 
@@ -142,10 +142,10 @@ def check_alerts(ticks):
 
                     print(order)
 
-                    url = f'https://api.kite.trade/orders/regular'
-                    resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
-                    parsed_response = json.loads(resp.content.decode("UTF-8"))
-                    print(parsed_response)
+                    # url = f'https://api.kite.trade/orders/regular'
+                    # resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
+                    # parsed_response = json.loads(resp.content.decode("UTF-8"))
+                    # print(parsed_response)
 
 
 
