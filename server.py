@@ -68,7 +68,7 @@ alerts = [
         "price": 416
     },
     {
-        "instrument_token": 1513985,
+        "instrument_token": 150000,
         "instrument_name": "PARAS",
         "volume_alert": {
             "value": 100000,
