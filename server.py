@@ -88,7 +88,7 @@ alerts = [
         "instrument_token": 133000196,
         "instrument_name": "ASIANTNE",
         "volume_alert": {
-            "value": 200000,
+            "value": 210000,
             "triggered": 0
         },
         "type": "UPPER",
