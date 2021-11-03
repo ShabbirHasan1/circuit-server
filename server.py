@@ -43,7 +43,7 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [ 139078148, 1513985, 133000196, 134309892 ]
+tokens = [  134309892 ]
 
 # authorization_string 
 authorization_string = 'token 26ud7j6qh471oabu:YeimuzRq31BEEzlhbFb8GkBnXIh1OQgb'
@@ -94,7 +94,7 @@ def send_email(trigger_type, instrument_name):
   message = service.users().messages().send(userId='me', body={'raw': raw_string}).execute()
 
 def check_alerts(ticks): 
-    print(ticks)
+    # print(ticks)
 
     for tick in ticks:
 
