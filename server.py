@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 
 # Initialise.
-kws = KiteTicker("26ud7j6qh471oabu", "hGxDzIf5nkENcedZ3rITcEqxSdFYb7uM")
+kws = KiteTicker("26ud7j6qh471oabu", "YeimuzRq31BEEzlhbFb8GkBnXIh1OQgb")
 
 # ********GMAIL API CONFIGURATION*************
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -46,61 +46,11 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 tokens = [ 139078148, 1513985, 133000196, 134309892 ]
 
 # authorization_string 
-authorization_string = 'token 26ud7j6qh471oabu:hGxDzIf5nkENcedZ3rITcEqxSdFYb7uM'
+authorization_string = 'token 26ud7j6qh471oabu:YeimuzRq31BEEzlhbFb8GkBnXIh1OQgb'
 
 
 alerts = [
-     {
-        "instrument_token": 139078148,
-        "instrument_name": "SUUMAYA",
-        "volume_alert": {
-            "value": 2000,
-            "triggered": 0
-        },
-        "type": "LOWER",
-        "quantity_alert": {
-            "value": 2000,
-            "triggered": 0
-        },
-        "exchange": "BSE",
-        "quantity": 1,
-        "place_order": 0,
-        "price": 416
-    },
-    {
-        "instrument_token": 150000,
-        "instrument_name": "PARAS",
-        "volume_alert": {
-            "value": 100000,
-            "triggered": 0
-        },
-        "type": "LOWER",
-        "quantity_alert": {
-            "value": 150000,
-            "triggered": 0
-        },
-        "exchange": "BSE",
-        "quantity": 1,
-        "place_order": 0,
-        "price": 416
-    },
-    {
-        "instrument_token": 133000196,
-        "instrument_name": "ASIANTNE",
-        "volume_alert": {
-            "value": 210000,
-            "triggered": 0
-        },
-        "type": "UPPER",
-        "quantity_alert": {
-            "value": 110000,
-            "triggered": 0
-        },
-        "exchange": "BSE",
-        "quantity": 1,
-        "place_order": 0,
-        "price": 416
-    },
+   
     {
         "instrument_token": 134309892,
         "instrument_name": "INDOAMIN",
