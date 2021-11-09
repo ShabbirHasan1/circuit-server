@@ -43,7 +43,7 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 # ********GMAIL API CONFIGURATION*************
 
 # RELIANCE BSE
-tokens = [  134309892 ]
+tokens = [  4451329 ]
 
 # authorization_string 
 authorization_string = 'token 26ud7j6qh471oabu:C1qsdnQDDKXqL8GGMGE22ZZ21p9Qd7Kx'
@@ -60,13 +60,13 @@ alerts = [
         },
         "type": "UPPER",
         "quantity_alert": {
-            "value": 2500000,
+            "value": 1000000,
             "triggered": 0
         },
         "exchange": "BSE",
-        "quantity": 1,
-        "place_order": 0,
-        "price": 416
+        "quantity": 2791,
+        "place_order": 1,
+        "price": 109.8
     }
 ]
 
@@ -143,10 +143,10 @@ def check_alerts(ticks):
 
                     print(order)
 
-                    # url = f'https://api.kite.trade/orders/regular'
-                    # resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
-                    # parsed_response = json.loads(resp.content.decode("UTF-8"))
-                    # print(parsed_response)
+                    url = f'https://api.kite.trade/orders/regular'
+                    resp = requests.post(url, data = order,headers={'X-Kite-Version': '3','Authorization':authorization_string})
+                    parsed_response = json.loads(resp.content.decode("UTF-8"))
+                    print(parsed_response)
 
 
 
