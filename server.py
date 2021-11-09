@@ -60,13 +60,13 @@ alerts = [
         },
         "type": "UPPER",
         "quantity_alert": {
-            "value": 1000000,
+            "value": 500000,
             "triggered": 0
         },
-        "exchange": "BSE",
-        "quantity": 2791,
+        "exchange": "NSE",
+        "quantity": 4500,
         "place_order": 1,
-        "price": 109.8
+        "price": 109.7
     }
 ]
 
