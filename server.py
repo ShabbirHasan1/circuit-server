@@ -58,7 +58,7 @@ alerts = [
             "value": 380000,
             "triggered": 0
         },
-        "type": "UPPER",
+        "type": "LOWER",
         "quantity_alert": {
             "value": 20000,
             "triggered": 0
