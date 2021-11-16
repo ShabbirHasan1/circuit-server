@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 
 
 # Initialise.
-kws = KiteTicker("26ud7j6qh471oabu", "uj0Bgu7maE20QMwYEF3D7s6WFDMltKW1")
+kws = KiteTicker("26ud7j6qh471oabu", "5FtgYH5yEIM2oOvkC2yJh3qquV0iJHmU")
 
 # ********GMAIL API CONFIGURATION*************
 CLIENT_SECRET_FILE = 'client_secret.json'
@@ -46,7 +46,7 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 tokens = [  3432705 ]
 
 # authorization_string 
-authorization_string = 'token 26ud7j6qh471oabu:uj0Bgu7maE20QMwYEF3D7s6WFDMltKW1'
+authorization_string = 'token 26ud7j6qh471oabu:5FtgYH5yEIM2oOvkC2yJh3qquV0iJHmU'
 
 
 alerts = [
